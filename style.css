@@ -1,0 +1,180 @@
+/* Basic page settings */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #243247;
+}
+
+/* Put the university information and form in two columns */
+.portal-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* University information */
+.site-heading {
+  padding: 40px 30px;
+  text-align: center;
+  border-right: 4px solid #1767b1;
+}
+
+.badge-space {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+}
+
+.badge-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.site-heading h1 {
+  color: #123d78;
+  font-size: 26px;
+}
+
+.site-heading h2,
+.card-heading h3 {
+  color: #1767b1;
+}
+
+/* Login and registration forms */
+.form-panel {
+  padding: 30px 20px;
+}
+
+.form-card {
+  max-width: 490px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #e1e8f0;
+  border-radius: 12px;
+}
+
+.card-heading,
+.form-bottom {
+  text-align: center;
+}
+
+.card-heading {
+  margin-bottom: 26px;
+}
+
+.card-heading p,
+.site-heading p,
+.field-help {
+  color: #66758a;
+}
+
+/* Form labels and input boxes */
+form label {
+  display: block;
+  margin: 17px 0 8px;
+  font-weight: bold;
+}
+
+form input,
+form select {
+  width: 100%;
+  min-height: 47px;
+  padding: 12px;
+  border: 1px solid #ccd6e2;
+  border-radius: 6px;
+}
+
+.phone-row {
+  display: flex;
+  gap: 10px;
+}
+
+.phone-row select {
+  width: 42%;
+}
+
+.phone-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Links and buttons */
+.forgot-row {
+  margin: 12px 0 20px;
+  text-align: right;
+}
+
+.forgot-row a,
+.outline-button {
+  color: #1767b1;
+}
+
+.primary-button {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: #1767b1;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-bottom {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e7edf4;
+}
+
+.outline-button {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid #1767b1;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Keep the two columns on smaller screens */
+@media (max-width: 520px) {
+  .portal-layout {
+    grid-template-columns: 40% 60%;
+  }
+
+  .site-heading {
+    padding: 22px 8px;
+  }
+
+  .site-heading h1 {
+    font-size: 15px;
+  }
+
+  .site-heading h2 {
+    font-size: 13px;
+  }
+
+  .badge-space {
+    width: 72px;
+    height: 72px;
+  }
+
+  .form-panel {
+    padding: 12px 8px;
+  }
+
+  .form-card {
+    padding: 18px 12px;
+  }
+
+  .phone-row {
+    display: block;
+  }
+
+  .phone-row select {
+    width: 100%;
+  }
+}

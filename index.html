@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUST Application Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- The page has two columns: university information and forms. -->
+  <div class="portal-layout">
+    <header class="site-heading">
+      <div class="badge-space">
+        <img class="badge-image" src="logo.png" alt="Mbarara University of Science and Technology badge">
+      </div>
+      <h1>MBARARA UNIVERSITY OF SCIENCE AND TECHNOLOGY</h1>
+      <h2>ONLINE APPLICATION SYSTEM</h2>
+      <p>Welcome to the online application portal</p>
+    </header>
+
+    <main class="form-panel">
+      <!-- Login form -->
+      <section class="form-card" id="login-view" aria-labelledby="login-title">
+        <div class="card-heading">
+          <h3 id="login-title">WELCOME !!!</h3>
+          <p>Log in to access your application details</p>
+        </div>
+
+        <form action="#" method="post">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          >
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          >
+
+          <div class="forgot-row">
+            <a href="#">Forgot your password?</a>
+          </div>
+          <button type="submit" class="primary-button">Sign In</button>
+        </form>
+
+        <div class="form-bottom">
+          <p>Don't have an account yet?</p>
+          <a class="outline-button" href="#register">Create Account</a>
+        </div>
+      </section>
+
+      <!-- Registration form -->
+      <section class="form-card" id="register-view" aria-labelledby="register-title" hidden>
+        <div class="card-heading">
+          <h3 id="register-title">Create Account</h3>
+          <p>Enter your details below to register on the portal</p>
+        </div>
+
+        <form action="#" method="post">
+          <label for="surname">Surname</label>
+          <input
+            type="text"
+            id="surname"
+            name="surname"
+            placeholder="Enter your surname"
+            required
+          >
+
+          <label for="other-names">Other Names</label>
+          <input
+            type="text"
+            id="other-names"
+            name="other-names"
+            placeholder="Enter your other names"
+            required
+          >
+
+          <label for="phone">Phone Number</label>
+          <div class="phone-row">
+            <select id="country-code" name="country-code" aria-label="Country code">
+              <option value="+256">Uganda (+256)</option>
+            </select>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="e.g. 0770000000"
+              required
+            >
+          </div>
+          <p class="field-help">Use an active phone number for application updates.</p>
+
+          <label for="account-email">Email Address</label>
+          <input
+            type="email"
+            id="account-email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          >
+
+          <button type="submit" class="primary-button">Create Account</button>
+        </form>
+
+        <div class="form-bottom">
+          <p>Already have an account?</p>
+          <a class="outline-button" href="#login">Back to Login</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- Show one form at a time. -->
+  <script>
+    const loginView = document.getElementById("login-view");
+    const registerView = document.getElementById("register-view");
+
+    function showForm() {
+      const showRegistration = window.location.hash === "#register";
+      loginView.hidden = showRegistration;
+      registerView.hidden = !showRegistration;
+
+      loginView.querySelectorAll("input, select, button").forEach(function (field) {
+        field.disabled = showRegistration;
+      });
+
+      registerView.querySelectorAll("input, select, button").forEach(function (field) {
+        field.disabled = !showRegistration;
+      });
+    }
+
+    window.addEventListener("hashchange", showForm);
+    showForm();
+  </script>
+</body>
+</html>
